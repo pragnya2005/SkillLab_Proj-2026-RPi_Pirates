@@ -5,14 +5,10 @@
 > **Project Duration:** 16 hours  
 > **Total Time Available:** 32 effort-hours per team  
 > **Project Type:** Playful, interactive, technology-based experience
-
 # How to use this README
-
 This file is your team’s **working project document**.
-
 You must keep updating it throughout the build period.  
 By the final review, this README should clearly show:
-
 - your idea,
 - your planning,
 - your design decisions,
@@ -59,15 +55,11 @@ By the final review, this README should clearly show:
 ## 1.5 Expanded Project Idea
 
 This project is an interactive digital ping pong game that integrates a PC-based game environment with a Raspberry Pi-enabled controller system. The game allows two players to compete using different input methods like keyboard controls and a mobile phone acting as a controller. It includes engaging gameplay features such as a pre-game countdown, real-time scoreboard with player names and a win condition where the first player to reach five points is declared the winner. Additionally, the game introduces increasing difficulty levels by gradually accelerating the ball speed every few seconds, enhancing competitiveness and excitement.
-
 The experience created is dynamic and engaging, encouraging physical interaction and quick reflexes while maintaining simplicity in design. The project combines multiple technologies, including Python and Pygame for game development, Raspberry Pi for handling external inputs, and mobile connectivity for controller interaction. This integration demonstrates how hardware and software can work together to create an interactive gaming system, blending traditional gameplay with modern, flexible input methods.
 
 # 2. Inspiration
 
 ## 2.1 References
-
-List what inspired the project.
-
 | Source Type | Title / Link                                                        | What Inspired You                                                                         |
 | ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `[Video]`   | `(https://www.youtube.com/watch?v=5NkTzvMchMw)o` | `How projection mapping can be used to create interactive digital + physical experiences` 
@@ -76,7 +68,6 @@ List what inspired the project.
 |`[Concept]`|	`Mobile as Game Controller`| `Using a smartphone as an alternative input device instead of standard controllers`
 
 ## 2.2 Original Twist
-
 What makes your project original?
 The originality of our project lies in combining a classic ping pong game with modern, multi-device interaction. Unlike traditional Pong, which relies only on keyboard input, our system integrates a Raspberry Pi to enable a mobile phone to function as a controller alongside keyboard controls. This creates a hybrid interaction model that blends physical and digital inputs.
 Additionally, the game introduces dynamic gameplay elements such as increasing ball speed over time, a structured countdown before gameplay, and a personalized scoreboard displaying player names with a defined win condition. The project is further unique in its potential as an interactive installation, where users engage with the system through multiple interfaces, making the experience more immersive and flexible compared to standard desktop games.  
@@ -84,35 +75,57 @@ Additionally, the game introduces dynamic gameplay elements such as increasing b
 # 3. Project Intent
 
 ## 3.1 User Journey 
-
-Describe exactly how a user will use the project.Make it a story
-**Response:**  
-
-                                                  |
-
-
-
----
-
+A user opens the Ping Pong Game on their device and is greeted with a visually engaging home screen featuring a playful ping pong theme. The title of the game is displayed along with a prominent “Play” button. Curious and excited, the user clicks on the Play button to begin.
+Next, the user is taken to a game mode selection screen, where they can choose between One Player and Two Players. If the user wants to play alone, they select One Player, where they will compete against the computer. If they want to play with a friend, they select Two Players.
+In the case of Two Player mode, the system asks both players to enter their names. After entering the names, they proceed further. The controls are clearly shown: Player 1 uses W and S keys, while Player 2 uses the Up and Down arrow keys. After selecting the mode, the user moves to the level selection screen, where they choose the difficulty of the game — Easy, Medium, or Hard — depending on their comfort level. The difficulty affects the speed of the ball and the gameplay intensity.
+Once the level is selected, the game starts. A rectangular game area appears with two paddles and a moving ball. A scoreboard is displayed at the top, showing the current scores of both players. The user controls their paddle and tries to hit the ball back and forth. Each time a player misses the ball, the opponent gains a point. A sound effect plays whenever the ball hits a paddle, enhancing the gaming experience.
+During the game, the user can press ‘P’ to pause or ‘ESC’ to exit if needed. As the game continues, the scoreboard updates dynamically. When one of the players reaches 5 points, the game ends, and a winner screen is displayed showing the winner’s name and final score. Finally, the user can press ‘R’ to replay, which brings them back to the home screen, ready to start a new game.
+                                   
 # 4. Definition of Success
 
 ## 4.1 Definition of “Usable”
-
-
+ The project is considered usable when a user can easily navigate through all the screens and successfully play the ping pong game without confusion.
+A usable system should:
+1. Allow the user to start the game from the home screen
+2. Let the user choose between one player and two player modes
+3. Enable smooth input of player names (for two-player mode)
+4. Allow selection of difficulty level (easy, medium, hard)
+5. Provide clear controls for gameplay (keyboard/mouse)
+6. Display a working game screen with paddles, ball, and scoreboard
+7. Update the score correctly when a point is made
+8. Show a winner screen when a player reaches 5 points
+9. Allow the user to pause, exit, and replay the game
+10. If the user can complete a full game cycle (start → play → win → replay), the system is considered usable
 
 ## 4.2 Minimum Usable Version
 
-What is the smallest version of this project that still delivers the core experience?
-
-**Response:**  
-
+The minimum usable version is the simplest version of the game that still provides the core experience of playing ping pong.
+It includes:
+1. Basic home screen with Play button
+2. Selection of one player mode only (no need for two-player initially)
+3. Simple game screen with one paddle (user) and one computer paddle
+4. Basic ball movement and collision logic
+5. A simple scoreboard
+6. Game ends when one player reaches 5 points
+7. Display of a basic winner message
+This version does not require advanced UI design, sound effects, or animations but must allow the user to play and complete a full game.
 
 ## 4.3 Stretch Features
-
-What features are nice to have but not essential?
-
-
----
+ 
+Stretch features are additional improvements that enhance the game but are not required for the basic functionality.
+These include:
+1. Two-player mode with custom player names
+2. Sound effects (ball hit, scoring, win sound)
+3. Pause and resume feature (P key)
+4. Exit option (ESC key)
+5. Replay option (R key)
+6. Improved UI/UX design with themes (space/pixel style)
+7. Mobile-responsive design
+8. Difficulty levels (easy, medium, hard) with increasing ball speed
+9. Animations (ball trail, paddle movement effects)
+10. Score history or leaderboard
+11. Touch controls for mobile devices
+These features make the game more engaging and professional but are not necessary for the core gameplay.
 
 # 5. System Overview
 
@@ -126,44 +139,52 @@ Check all that apply.
 
 - [x] Sensor-based
 
-- [x] App-connected
+- [ ] App-connected
 
-- [x] Motorized
+- [ ] Motorized
 
 - [ ] Sound-based
 
-- [x] Light-based
+- [ ] Light-based
 
 - [x] Screen/UI-based
 
-- [x] Fabricated structure
+- [ ] Fabricated structure
 
 - [x] Game logic based
 
-- [x] Installation
+- [ ] Installation
 
 - [ ] Other:
 
 ## 5.2 High-Level System Description
 
-Explain how the system works in simple terms.
-
-Include:
-
-- input,
-- processing,
-- output,
-- physical structure,
-- app interaction if any.
-
-**Response:**  
+The Ping Pong Game is a screen-based interactive system where the user plays a digital version of ping pong either against the computer or another player.
+The system works as follows:
+Input: The user provides input using keyboard keys (W, S, Arrow keys) or mouse (in one-player mode). The user also selects game mode, difficulty level, and enters player names.
+Processing: The system processes user inputs and runs the game logic. It controls the movement of paddles, calculates the ball’s direction, detects collisions between the ball and paddles/walls, updates scores, and determines when a player wins.
+Output: The output is displayed on the screen in the form of a game interface. It shows the paddles, moving ball, scoreboard, and winner message. Sound effects may also play when the ball hits a paddle or when a player scores.
+Physical Structure: The system is software-based and runs on devices like a computer or mobile screen. There is no physical hardware structure required apart from input devices (keyboard/mouse).
+App Interaction: The game can run as a web application or local application. The user interacts through UI screens such as home screen, game mode selection, gameplay screen, and result screen.
+ 
 
 ## 5.3 Input / Output Map
 
-| System Part                              | Type            | What It Does                                                               |
-
-
----
+| System Part          | Type       | What It Does
+|----------------------|------------|----------------------------------------
+| Play Button          | Input      | Starts the game
+| Mode Selection       | Input      | Chooses one-player or two-player mode
+| Name Input Fields    | Input      | Takes player names
+| Keyboard (W, S, ↑, ↓)| Input      | Controls paddle movement
+| Mouse                | Input      | Controls paddle in one-player mode 
+| Level Selection      | Input      | Sets difficulty (ball speed)
+| Game Logic Engine    | Processing | Handles movement, collision, scoring
+| Ball Movement        | Processing | Calculates direction and speed
+| Collision Detection  | Processing | Detects ball hitting paddle/walls
+| Scoreboard           | Output     | Displays player scores
+| Game Screen          | Output     | Shows paddles, ball, gameplay
+| Winner Screen        | Output     | Displays winner and final score
+| Sound System         | Output     | Plays sound on hit/score
 
 # 6. System Design, Sketches and Visual Planning 
 
