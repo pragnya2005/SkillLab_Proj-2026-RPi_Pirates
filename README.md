@@ -44,9 +44,7 @@ By the final review, this README should clearly show:
 
 `"Implementing Ping Pong game using RasPi"`
 
-##`(because Project-or)`
-
-##<img width="1600" height="1131" alt="image" src="https://github.com/user-attachments/assets/c64bfbd4-b3b7-43d9-83ad-c203a5aa11bc" />
+<img src="images/.jpeg" width="600" />
 
 ## 1.4 One-Line Pitch
 
@@ -166,7 +164,6 @@ Output: The output is displayed on the screen in the form of a game interface. I
 Physical Structure: The system is software-based and runs on devices like a computer or mobile screen. There is no physical hardware structure required apart from input devices (keyboard/mouse).
 App Interaction: The game can run as a web application or local application. The user interacts through UI screens such as home screen, game mode selection, gameplay screen, and result screen.
  
-
 ## 5.3 Input / Output Map
 
 | System Part          | Type       | What It Does
@@ -189,11 +186,7 @@ App Interaction: The game can run as a web application or local application. The
 
 ## 6.1 Concept Architecture/sketch/schematic
 
-Add an early sketch of the full idea.
-
 <img src="images/sketch.jpeg" width="600" />
-
-
 
 ## 6.2 Labeled Build Sketch/architecture/flow diagram/algorithm
 
@@ -206,33 +199,23 @@ Add a sketch with labels showing:
 - output elements.
 
 **Insert image below:**  
-`[Upload image and link here]`
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/95637f31-b4e7-4427-a9e1-4b63fbeb0ac5" />
+<img src="images/sketch.jpeg" width="600" />
 
 ## 6.3 Approximate Dimensions
-
-| Dimension        | Value   |
-| ---------------- | ------- |
-| Length           | `16 cm` |
-| Width            | `16 cm` |
-| Height           | `8 cm`  |
-| Estimated weight | `400 g` |
-
----
+Not Applicable (NA) – The project is primarily a software-based interactive game and does not involve a fixed or dedicated physical structure with defined dimensions. The system runs on a computer display and uses external devices such as a keyboard and mobile phone for input. While a Raspberry Pi is used for input integration, it is not enclosed within a custom-built physical form factor. Therefore, standard dimensions like length, width, height, and weight are not relevant to this project.
 
 # 7. Electronics Planning
 
 ## 7.1 Electronics Used
 
-| Component                 | Quantity | Purpose                               |
-| ------------------------- | --------:| ------------------------------------- |
-| `[Raspi/FPGA]`                 | `1`      | `[Main controller]`                   |
-| `[L298N Motor Driver]`    | `1`      | `[Control Motors]`                    |
-| `[BO Motors]`             | `2`      | `[Rotate wheels]`                     |
-| `[Buck Converter]`        | `1`      | `[Power ESP32]`                       |
-| `[Li Ion Battery Pack]`   | `2`      | `[Power]`                             |
-| `[Projector]`             | `1`      | `[Display obstacles]`                 |
-| `Camera (Webcam / Phone)` | `1`      | `[Tracks car position using markers]` |
+| Component                | Quantity | Purpose                                          |
+|--------------------------|----------|--------------------------------------------------|
+| Raspberry Pi             | 1        | Acts as interface between phone controller and PC|
+| Mobile Phone             | 1        | Sends control inputs (up/down)                   |
+| Wi-Fi Network            | 1        | Enables communication between phone and Pi       |
+| PC / Laptop              | 1        | Runs game logic and display (Pygame)             |
+| Display Screen/Monitor   | 1        | Shows gameplay, scoreboard, and UI               |
+| Keyboard                 | 1        | Controls paddle movement (Player input)          |
 
 ## 7.2 Wiring Plan
 
