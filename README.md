@@ -39,10 +39,10 @@ By the final review, this README should clearly show:
 
 | Name                  | Primary Role                  | Secondary Role   | Strengths Brought to the Project |
 | --------------------- | ------------------------------| --------------   | -------------------------------- |
-| `Pragnya Sahoo`       | `UI interface / Coding / App `| `Documentation`  | `Documentation, Gift of Gab `    |
-| `Sudarsana Krishnan`  | `UI interface / Coding / App `| `Documentation`  | `Material Handling, Hardware`    |
-| `Aditi Panigrahi`     | `UI interface / Coding / App `| `Documentation`  | `Documentation, Gift of Gab `    |
-| `Shabarinath Nair`    | `UI interface / Coding / App `| `Documentation`  | `Material Handling, Hardware`    |
+| `Pragnya Sahoo`       | `UI interface / App `         | `Documentation`  | `Documentation, Gift of Gab `    |
+| `Sudarsana Krishnan`  | `Coding / App `               | `Documentation`  | `Material Handling, Hardware`    |
+| `Aditi Panigrahi`     | `UI interface / App `         | `Documentation`  | `Documentation, Gift of Gab `    |
+| `Shabarinath Nair`    | ` Coding / App `              | `Documentation`  | `Material Handling, Hardware`    |
 
 ## 1.3 Project Title
 
@@ -58,16 +58,9 @@ By the final review, this README should clearly show:
 
 ## 1.5 Expanded Project Idea
 
-In 1–2 paragraphs, explain:
+This project is an interactive digital ping pong game that integrates a PC-based game environment with a Raspberry Pi-enabled controller system. The game allows two players to compete using different input methods like keyboard controls and a mobile phone acting as a controller. It includes engaging gameplay features such as a pre-game countdown, real-time scoreboard with player names and a win condition where the first player to reach five points is declared the winner. Additionally, the game introduces increasing difficulty levels by gradually accelerating the ball speed every few seconds, enhancing competitiveness and excitement.
 
-- what your project is,
-- what kind of experience it creates,
-- what technologies are involved.
-
-**Response:**  
-`A projected and fully customizable time portal can transform engineering education into an immersive PUBG-style battlefield experience from the comfort of home. In this environment, students can learn engineering concepts by entering a virtual battlefield where challenges, obstacles, and missions are designed around real technical problems. Instead of passively studying theory, learners actively apply concepts such as electronics, coding, sensors, robotics, mechanics, and system design to complete missions, solve problems, and progress through different levels. This approach makes engineering education more interactive, engaging, and practical by combining gaming, simulation, and hands-on problem-solving in a familiar and exciting format.`
-
----
+The experience created is dynamic and engaging, encouraging physical interaction and quick reflexes while maintaining simplicity in design. The project combines multiple technologies, including Python and Pygame for game development, Raspberry Pi for handling external inputs, and mobile connectivity for controller interaction. This integration demonstrates how hardware and software can work together to create an interactive gaming system, blending traditional gameplay with modern, flexible input methods.
 
 # 2. Inspiration
 
@@ -77,18 +70,16 @@ List what inspired the project.
 
 | Source Type | Title / Link                                                        | What Inspired You                                                                         |
 | ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `[Video]`   | `https://www.instagram.com/reel/DW4CT7WCDry/?igsh=cXg3dzAxYmdncDBo` | `How projection mapping can be used to create interactive digital + physical experiences` |
-|             |                                                                     |                                                                                           |
-|             |                                                                     |                                                                                           |
+| `[Video]`   | `[https://www.instagram.com/reel/DW4CT7WCDry/?igsh=cXg3dzAxYmdncDB](https://www.youtube.com/watch?v=5NkTzvMchMw)o` | `How projection mapping can be used to create interactive digital + physical experiences` |
+| `[Game]`    |  `Classic Pong Game ` | `Simple yet engaging gameplay mechanics and competitive two-player interaction `
+|`[Technology]`|	`Raspberry Pi`	| `Using hardware like Raspberry Pi to extend traditional computer-based systems`
+|`[Concept]`|	`Mobile as Game Controller`| `Using a smartphone as an alternative input device instead of standard controllers`
 
 ## 2.2 Original Twist
 
 What makes your project original?
-
-**Response:**  
-
-
----
+The originality of our project lies in combining a classic ping pong game with modern, multi-device interaction. Unlike traditional Pong, which relies only on keyboard input, our system integrates a Raspberry Pi to enable a mobile phone to function as a controller alongside keyboard controls. This creates a hybrid interaction model that blends physical and digital inputs.
+Additionally, the game introduces dynamic gameplay elements such as increasing ball speed over time, a structured countdown before gameplay, and a personalized scoreboard displaying player names with a defined win condition. The project is further unique in its potential as an interactive installation, where users engage with the system through multiple interfaces, making the experience more immersive and flexible compared to standard desktop games.  
 
 # 3. Project Intent
 
