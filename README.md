@@ -23,7 +23,7 @@
 
 ## 1.3 Project Title
 
-`"Implementing Ping Pong game using RasPi"`
+`"Implementation of Ping Pong game using RasPi"`
 
 <img src="images/intro.jpeg" width="600" />
 
@@ -76,7 +76,6 @@ A usable system should:
 10. If the user can complete a full game cycle (start → play → win → replay), the system is considered usable
 
 ## 4.2 Minimum Usable Version
-
 The minimum usable version is the simplest version of the game that still provides the core experience of playing ping pong.
 It includes:
 1. Basic home screen with Play button
@@ -89,7 +88,6 @@ It includes:
 This version does not require advanced UI design, sound effects, or animations but must allow the user to play and complete a full game.
 
 ## 4.3 Stretch Features
- 
 Stretch features are additional improvements that enhance the game but are not required for the basic functionality.
 These include:
 1. Two-player mode with custom player names
@@ -109,7 +107,6 @@ These features make the game more engaging and professional but are not necessar
 # 5. System Overview
 
 ## 5.1 Project Type
-
 Check all that apply.
 
 - [x] Electronics-based
@@ -137,7 +134,6 @@ Check all that apply.
 - [ ] Other:
 
 ## 5.2 High-Level System Description
-
 The Ping Pong Game is a screen-based interactive system where the user plays a digital version of ping pong either against the computer or another player.
 The system works as follows:
 Input: The user provides input using keyboard keys (W, S, Arrow keys) or mouse (in one-player mode). The user also selects game mode, difficulty level, and enters player names.
@@ -174,8 +170,7 @@ The sketch illustrates the user interface flow and screen layout of the ping pon
 
 ## 6.2 Labeled flow diagram
 The flowchart represents the logical sequence of operations in the ping pong game system. The process begins with the start state, followed by the home screen where the user initiates the game by clicking the play button. The user then selects the game mode (single-player or two-player). If two-player mode is chosen, player names are entered. Next, the user selects the difficulty level (easy, medium, or hard), after which the game begins with a countdown. During gameplay, the system continuously updates ball movement, paddle positions, and scores. A decision condition checks whether any player has reached the winning score (5 points). If not, the game continues; otherwise, the winner is declared. The system then provides an option to replay or return to the home screen, completing the cycle.
-**Insert image below:**  
-<img src="images/flow.jpeg" width="600" />
+<img src="images/flowchart.jpeg" width="600" />
 
 ## 6.3 Approximate Dimensions
 Not Applicable (NA) – The project is primarily a software-based interactive game and does not involve a fixed or dedicated physical structure with defined dimensions. The system runs on a computer display and uses external devices such as a keyboard and mobile phone for input. While a Raspberry Pi is used for input integration, it is not enclosed within a custom-built physical form factor. Therefore, standard dimensions like length, width, height, and weight are not relevant to this project.
@@ -200,8 +195,7 @@ The keyboard is directly connected to the PC and is used for player input in mul
 Since there are no high-power components or dedicated circuits, a common electrical ground or physical wiring between components is not required. The system relies entirely on network-based communication for interaction between devices
 
 ## 7.3 Circuit architecture diagram
-The Ping Pong Game system is designed using a Raspberry Pi as the main processing unit, which controls the entire gameplay. The system takes input from devices such as a keyboard and mouse, where the keyboard is used in two-player mode and the mouse is used in one-player mode to control the paddles. These inputs are processed by the Raspberry Pi, which runs the game logic using software (Python and Pygame). It performs operations such as paddle movement, ball movement, collision detection, score calculation, and winner determination. The processed output is then displayed on a monitor, where the user can visually interact with the game. The system follows a simple input–process–output model, making it efficient and easy to understand.
-**Insert image below:**  
+The Ping Pong Game system is designed using a Raspberry Pi as the main processing unit, which controls the entire gameplay. The system takes input from devices such as a keyboard and mouse, where the keyboard is used in two-player mode and the mouse is used in one-player mode to control the paddles. These inputs are processed by the Raspberry Pi, which runs the game logic using software (Python and Pygame). It performs operations such as paddle movement, ball movement, collision detection, score calculation, and winner determination. The processed output is then displayed on a monitor, where the user can visually interact with the game. The system follows a simple input–process–output model, making it efficient and easy to understand. 
 <img src="images/architecture.jpeg" width="600" />
 
 # 7.4. Power Plan
@@ -246,8 +240,7 @@ The flowchart represents the step-by-step working of the Ping Pong Game system. 
 If the user selects two-player mode, they are required to enter the player names, while in one-player mode this step is skipped. After that, the user selects the difficulty level such as easy, medium, or hard, which determines the speed and complexity of the game.
 Once the setup is complete, the game starts, and the main gameplay begins. In this stage, the ball moves continuously, and players control their paddles to hit the ball. The score updates automatically whenever a player misses the ball and the opponent gains a point.
 A decision condition is then checked: whether any player has reached 5 points. If no player has reached the winning score, the game continues in a loop. If a player reaches 5 points, the system displays the winner screen, announcing the winner.
-Finally, the user is given an option to replay the game, and upon selection, the system returns to the home screen, completing one full cycle of the game flow.
-**Insert image below:**  
+Finally, the user is given an option to replay the game, and upon selection, the system returns to the home screen, completing one full cycle of the game flow. 
 <img src="images/codeflow.jpeg" width="600" />
 
 # 9. Bill of Materials
@@ -285,7 +278,7 @@ Overall, the design avoids unnecessary hardware components such as motors or dri
 | Mechanical parts      | 0                  |
 | Fabrication materials | 0                  |
 | Purchased extras      | 0                  |
-| **Total**             | 0                  |
+| Total                 | 0                  |
 
 ## 9.5 Budget Reflection
 
@@ -339,7 +332,6 @@ Expected outcomes:
 
 Bi Hour 2 — Core Game Development
 Expected outcomes:
-
  1. Basic Pong mechanics implemented (ball + paddles)
  2. Keyboard controls working
  3. Collision detection implemented
@@ -427,13 +419,11 @@ The biggest uncertainty in our project was the reliability and responsiveness of
 # 15. Build Documentation
 
 ## 15.1 Fabrication Process(if any)
-
 Not Applicable (NA) – The project does not involve a dedicated physical fabrication process. It is primarily a software-based system developed using Python and Pygame, where the main interaction occurs through a digital interface displayed on a screen.
 There was no requirement for processes such as cutting, 3D printing, or structural assembly. The setup only involved connecting existing devices such as a PC, Raspberry Pi, keyboard, and mobile phone. These components were used in their standard form without any modification or custom fabrication.
 Minor setup included arranging the system for usability, such as ensuring proper device placement and stable network connectivity between the mobile phone, Raspberry Pi, and PC. Any iterations in the project were focused on improving the software—refining gameplay logic, user interface, responsiveness, and interaction—rather than modifying physical components.
 
 ## 16 Build Photos
-
 <img src="images/intro.jpeg" width="600" />
 <img src="images/mode(2).jpeg" width="600" />
 <img src="images/waytoplay.jpeg" width="600" />
@@ -443,7 +433,6 @@ Minor setup included arranging the system for usability, such as ensuring proper
 # 17. Final Outcome
 
 ## 17.1 Final Description
-
 The final project is an interactive digital ping pong game developed using Python and Pygame, integrated with a Raspberry Pi-based mobile controller system. The game allows players to choose between single-player mode (against an AI opponent) and two-player mode (using keyboard and mobile input). It features a structured user interface including a home screen, mode selection, level selection, and gameplay screen. Additional features such as a countdown before the game starts, a real-time scoreboard displaying player names, and a win condition where the first player to reach five points is declared the winner were successfully implemented. The difficulty level increases dynamically as the ball speed rises over time, making the gameplay more challenging and engaging. The game is further enhanced with a power-up system, introducing dynamic gameplay effects such as speed changes, paddle size variation, and control inversion, making each match unique and more engaging.
 
 ## 17.2 What Works Well
@@ -471,21 +460,17 @@ The main factor that slowed us down was the initial setup of communication betwe
 Time and task management were handled effectively despite the limited duration. The team adopted a parallel working approach, where multiple components were developed simultaneously, and responsibilities were clearly defined. This ensured that all major features were implemented within the 6-hour development window.
 
 ## 18.2 Technical Reflection
-
 Through this project, we gained practical experience in multiple areas. In terms of electronics, we learned how to use the Raspberry Pi as an interface for handling wireless communication between devices. In coding, we improved our understanding of game development using Python and Pygame, including handling real-time input, collision detection, and state management.
 Although the project did not involve mechanical systems or fabrication, we understood how to design systems that rely purely on software interaction. We also learned the importance of integration—ensuring that different components such as the mobile controller, Raspberry Pi, and game engine work together seamlessly. Overall, the project strengthened our ability to build interactive systems by combining programming, networking, and user interface design.
 
 ## 18.3 Design Reflection
-
 Through this project, we learned that good design is not just about visuals but about creating a smooth and intuitive user experience. While designing the game, we focused on clarity by keeping the interface simple, ensuring that users could easily understand how to navigate between screens and play the game without confusion. We also realized the importance of delight—features like the countdown, increasing speed, and competitive scoring made the game more engaging and enjoyable.
 Even though the project did not involve complex physical interaction, integrating a mobile phone as a controller introduced a new layer of interaction, making the experience more dynamic. We understood that user behavior plays a key role in design decisions, and small issues like unclear buttons or delayed responses can affect the overall experience.
 Iteration was a crucial part of our process. Based on testing and feedback, we continuously refined gameplay speed, UI layout, and responsiveness. This helped us improve both functionality and usability, showing that good design evolves through testing and improvement rather than being perfect from the start. 
 The introduction of power-ups significantly improved player engagement by adding unpredictability and strategic depth to the gameplay.
 
 ## 18.4 If You Had One More hour
-
 If we had one more hour, we would focus on enhancing the overall user experience and polish of the game. This would include improving the responsiveness of the mobile controller to reduce any remaining input delay and making the AI opponent more intelligent and adaptive.
-
 We would also enhance the visual design by adding animations, sound effects, and better graphics to make the game more engaging. Additionally, we would refine the difficulty progression to ensure a smoother increase in challenge. These improvements would not change the core functionality but would significantly improve the quality and feel of the final product.
 
 # 19. Final Submission Checklist
