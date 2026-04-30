@@ -20,11 +20,12 @@
 | Sudarsana Krishnan   | Game Development & Controller Integration |        -         | Problem-solving, system integration         |
 | Aditi Panigrahi      | UI Design & User Experience               | Documentation    | Creativity, user-centric thinking           |
 | Shabarinath Nair     | Game Development & Controller Integration |        -         | Logical thinking, debugging skills          |
+
 ## 1.3 Project Title
 
 `"Implementing Ping Pong game using RasPi"`
 
-<img src="images/.jpeg" width="600" />
+<img src="images/intro.jpeg" width="600" />
 
 ## 1.4 One-Line Pitch
 
@@ -33,7 +34,7 @@
 ## 1.5 Expanded Project Idea
 
 This project is an interactive digital ping pong game that integrates a PC-based game environment with a Raspberry Pi-enabled controller system. The game allows two players to compete using different input methods like keyboard controls and a mobile phone acting as a controller. It includes engaging gameplay features such as a pre-game countdown, real-time scoreboard with player names and a win condition where the first player to reach five points is declared the winner. Additionally, the game introduces increasing difficulty levels by gradually accelerating the ball speed every few seconds, enhancing competitiveness and excitement.
-The experience created is dynamic and engaging, encouraging physical interaction and quick reflexes while maintaining simplicity in design. The project combines multiple technologies, including Python and Pygame for game development, Raspberry Pi for handling external inputs, and mobile connectivity for controller interaction. This integration demonstrates how hardware and software can work together to create an interactive gaming system, blending traditional gameplay with modern, flexible input methods.
+The experience created is dynamic and engaging, encouraging physical interaction and quick reflexes while maintaining simplicity in design. The project combines multiple technologies, including Python and Pygame for game development, Raspberry Pi for handling external inputs, and mobile connectivity for controller interaction. This integration demonstrates how hardware and software can work together to create an interactive gaming system, blending traditional gameplay with modern, flexible input methods. Additionally, the game includes power-ups that appear randomly during gameplay to enhance interaction and unpredictability. These include features such as increasing paddle size, slowing or speeding up the ball, making the ball invisible, introducing multiple balls, and reversing player controls. These dynamic elements make the gameplay more engaging and strategic.
 
 # 2. Inspiration
 
@@ -57,7 +58,7 @@ Next, the user is taken to a game mode selection screen, where they can choose b
 In the case of Two Player mode, the system asks both players to enter their names. After entering the names, they proceed further. The controls are clearly shown: Player 1 uses W and S keys, while Player 2 uses the Up and Down arrow keys. The difficulty affects the speed of the ball and the gameplay intensity.
 Once the level is selected, the game starts. A rectangular game area appears with two paddles and a moving ball. A scoreboard is displayed at the top, showing the current scores of both players. The user controls their paddle and tries to hit the ball back and forth. Each time a player misses the ball, the opponent gains a point. A sound effect plays whenever the ball hits a paddle, enhancing the gaming experience.
 During the game, the user can press ‘P’ to pause or ‘ESC’ to exit if needed. As the game continues, the scoreboard updates dynamically. When one of the players reaches 5 points, the game ends, and a winner screen is displayed showing the winner’s name and final score. Finally, the user can press ‘R’ to replay, which brings them back to the home screen, ready to start a new game.
-                                   
+During gameplay, the user may encounter power-ups that randomly appear on the screen. When the ball hits a power-up, special effects are activated, such as increasing paddle size, changing ball speed, or reversing controls. This adds an element of surprise and requires players to quickly adapt their strategy.                                   
 # 4. Definition of Success
 
 ## 4.1 Definition of “Usable”
@@ -102,6 +103,7 @@ These include:
 9. Animations (ball trail, paddle movement effects)
 10. Score history or leaderboard
 11. Touch controls for mobile devices
+12. Power-ups system
 These features make the game more engaging and professional but are not necessary for the core gameplay.
 
 # 5. System Overview
@@ -139,7 +141,7 @@ Check all that apply.
 The Ping Pong Game is a screen-based interactive system where the user plays a digital version of ping pong either against the computer or another player.
 The system works as follows:
 Input: The user provides input using keyboard keys (W, S, Arrow keys) or mouse (in one-player mode). The user also selects game mode, difficulty level, and enters player names.
-Processing: The system processes user inputs and runs the game logic. It controls the movement of paddles, calculates the ball’s direction, detects collisions between the ball and paddles/walls, updates scores, and determines when a player wins.
+Processing: The system processes user inputs and runs the game logic. It controls the movement of paddles, calculates the ball’s direction, detects collisions between the ball and paddles/walls, updates scores, and determines when a player wins. The system processes user inputs and runs the game logic. It controls paddle movement, ball direction, collision detection, scoring, and power-up activation logic, where special effects are triggered when the ball interacts with power-ups.
 Output: The output is displayed on the screen in the form of a game interface. It shows the paddles, moving ball, scoreboard, and winner message. Sound effects may also play when the ball hits a paddle or when a player scores.
 Physical Structure: The system is software-based and runs on devices like a computer or mobile screen. There is no physical hardware structure required apart from input devices (keyboard/mouse).
 App Interaction: The game can run as a web application or local application. The user interacts through UI screens such as home screen, game mode selection, gameplay screen, and result screen.
@@ -161,6 +163,8 @@ App Interaction: The game can run as a web application or local application. The
 | Game Screen          | Output     | Shows paddles, ball, gameplay
 | Winner Screen        | Output     | Displays winner and final score
 | Sound System         | Output     | Plays sound on hit/score
+| Power-ups            | Processing | Generates random effects during gameplay            
+| Power-up Effects     | Output     | Alters gameplay (speed, controls, visibility, etc.) 
 
 # 6. System Design, Sketches and Visual Planning 
 
@@ -229,7 +233,7 @@ Player inputs are received through the keyboard (W/S keys and arrow keys) and fr
 Sensor reading:
 Not applicable, as the system does not use physical sensors. Instead, it relies on user input signals from keyboard and mobile controller.
 Decision logic:
-The game continuously updates ball position, detects collisions with paddles and boundaries, and determines scoring conditions. Ball speed increases at fixed time intervals (every 7 seconds) to raise the difficulty level. The system also checks if a player has reached the winning score (5 points).
+The game continuously updates ball position, detects collisions with paddles and boundaries, and determines scoring conditions. Ball speed increases at fixed time intervals (every 7 seconds) to raise the difficulty level. The system also checks if a player has reached the winning score (5 points). The system also includes a power-up generation mechanism, where power-ups spawn at random intervals. When the ball collides with a power-up, the corresponding effect is activated temporarily, modifying gameplay conditions such as speed, paddle size, or controls.
 Output behavior:
 The game renders real-time visuals on the screen, including paddle movement, ball motion, countdown timer, scoreboard with player names, and winner announcement.
 Communication logic:
@@ -431,25 +435,17 @@ Minor setup included arranging the system for usability, such as ensuring proper
 
 ## 16 Build Photos
 
-Add photos throughout the project.
-Suggested images:
-- early sketch,
-- prototype,
-- electronics testing,
-- mechanism test,
-- app screenshot,
-- final build.
-- <img width="960" height="1280" alt="WhatsApp Image 2026-04-24 at 9 46 02 AM (1)" src="https://github.com/user-attachments/assets/74baa570-5770-483e-be6d-d2f03386e37c" />
-
-
-
-
+<img src="images/intro.jpeg" width="600" />
+<img src="images/mode(2).jpeg" width="600" />
+<img src="images/waytoplay.jpeg" width="600" />
+<img src="images/level.jpeg" width="600" />
+<img src="images/powerups.jpeg" width="600" />
 
 # 17. Final Outcome
 
 ## 17.1 Final Description
 
-The final project is an interactive digital ping pong game developed using Python and Pygame, integrated with a Raspberry Pi-based mobile controller system. The game allows players to choose between single-player mode (against an AI opponent) and two-player mode (using keyboard and mobile input). It features a structured user interface including a home screen, mode selection, level selection, and gameplay screen. Additional features such as a countdown before the game starts, a real-time scoreboard displaying player names, and a win condition where the first player to reach five points is declared the winner were successfully implemented. The difficulty level increases dynamically as the ball speed rises over time, making the gameplay more challenging and engaging.
+The final project is an interactive digital ping pong game developed using Python and Pygame, integrated with a Raspberry Pi-based mobile controller system. The game allows players to choose between single-player mode (against an AI opponent) and two-player mode (using keyboard and mobile input). It features a structured user interface including a home screen, mode selection, level selection, and gameplay screen. Additional features such as a countdown before the game starts, a real-time scoreboard displaying player names, and a win condition where the first player to reach five points is declared the winner were successfully implemented. The difficulty level increases dynamically as the ball speed rises over time, making the gameplay more challenging and engaging. The game is further enhanced with a power-up system, introducing dynamic gameplay effects such as speed changes, paddle size variation, and control inversion, making each match unique and more engaging.
 
 ## 17.2 What Works Well
 1. Smooth and responsive gameplay with real-time paddle and ball movement
@@ -457,6 +453,7 @@ The final project is an interactive digital ping pong game developed using Pytho
 3. Clear and intuitive user interface with multiple game states
 4. Functional scoreboard and win condition logic
 5. Dynamic difficulty increase enhances player engagement
+6. Power-ups add excitement and unpredictability to gameplay
 
 ## 17.3 What Still Needs Improvement
 1. Minor latency in mobile controller input can be further reduced
@@ -484,7 +481,7 @@ Although the project did not involve mechanical systems or fabrication, we under
 Through this project, we learned that good design is not just about visuals but about creating a smooth and intuitive user experience. While designing the game, we focused on clarity by keeping the interface simple, ensuring that users could easily understand how to navigate between screens and play the game without confusion. We also realized the importance of delight—features like the countdown, increasing speed, and competitive scoring made the game more engaging and enjoyable.
 Even though the project did not involve complex physical interaction, integrating a mobile phone as a controller introduced a new layer of interaction, making the experience more dynamic. We understood that user behavior plays a key role in design decisions, and small issues like unclear buttons or delayed responses can affect the overall experience.
 Iteration was a crucial part of our process. Based on testing and feedback, we continuously refined gameplay speed, UI layout, and responsiveness. This helped us improve both functionality and usability, showing that good design evolves through testing and improvement rather than being perfect from the start. 
-
+The introduction of power-ups significantly improved player engagement by adding unpredictability and strategic depth to the gameplay.
 
 ## 18.4 If You Had One More hour
 
@@ -512,6 +509,3 @@ We would also enhance the visual design by adding animations, sound effects, and
 - [x] Build photos are included
 - [x] Final reflection is written
 <img width="1131" height="1600" alt="image" src="" />
-
-
-
