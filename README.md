@@ -68,7 +68,6 @@ The experience created is dynamic and engaging, encouraging physical interaction
 |`[Concept]`|	`Mobile as Game Controller`| `Using a smartphone as an alternative input device instead of standard controllers`
 
 ## 2.2 Original Twist
-What makes your project original?
 The originality of our project lies in combining a classic ping pong game with modern, multi-device interaction. Unlike traditional Pong, which relies only on keyboard input, our system integrates a Raspberry Pi to enable a mobile phone to function as a controller alongside keyboard controls. This creates a hybrid interaction model that blends physical and digital inputs.
 Additionally, the game introduces dynamic gameplay elements such as increasing ball speed over time, a structured countdown before gameplay, and a personalized scoreboard displaying player names with a defined win condition. The project is further unique in its potential as an interactive installation, where users engage with the system through multiple interfaces, making the experience more immersive and flexible compared to standard desktop games.  
 
@@ -192,14 +191,7 @@ App Interaction: The game can run as a web application or local application. The
 
 Add an early sketch of the full idea.
 
-**Insert image below:**  
-`[Upload image and link here]`
-
-Example:
-
-```md
-
-```
+<img src="images/sketch.jpeg" width="600" />
 
 
 
