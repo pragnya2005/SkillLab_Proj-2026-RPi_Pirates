@@ -184,22 +184,13 @@ App Interaction: The game can run as a web application or local application. The
 
 # 6. System Design, Sketches and Visual Planning 
 
-## 6.1 Concept Architecture/sketch/schematic
+## 6.1 Concept sketch
 
 <img src="images/sketch.jpeg" width="600" />
 
-## 6.2 Labeled Build Sketch/architecture/flow diagram/algorithm
-
-Add a sketch with labels showing:
-
-- structure,
-- electronics placement,
-- user touch points,
-- moving parts,
-- output elements.
-
+## 6.2 Labeled flow diagram
 **Insert image below:**  
-<img src="images/sketch.jpeg" width="600" />
+<img src="images/flow.jpeg" width="600" />
 
 ## 6.3 Approximate Dimensions
 Not Applicable (NA) – The project is primarily a software-based interactive game and does not involve a fixed or dedicated physical structure with defined dimensions. The system runs on a computer display and uses external devices such as a keyboard and mobile phone for input. While a Raspberry Pi is used for input integration, it is not enclosed within a custom-built physical form factor. Therefore, standard dimensions like length, width, height, and weight are not relevant to this project.
@@ -218,78 +209,52 @@ Not Applicable (NA) – The project is primarily a software-based interactive ga
 | Keyboard                 | 1        | Controls paddle movement (Player input)          |
 
 ## 7.2 Wiring Plan
+The system does not involve complex electrical wiring, as it is primarily based on wireless communication and software integration. The Raspberry Pi, mobile phone, and PC are connected through a common Wi-Fi network.
+The mobile phone acts as a controller and sends input commands wirelessly to the Raspberry Pi. The Raspberry Pi processes these inputs and forwards them to the PC, where the main game logic is executed using Python and Pygame.
+The keyboard is directly connected to the PC and is used for player input in multiplayer mode. The PC is connected to a display screen, which shows the gameplay, including paddles, ball movement, scoreboard, and countdown.
+Since there are no high-power components or dedicated circuits, a common electrical ground or physical wiring between components is not required. The system relies entirely on network-based communication for interaction between devices
 
-Describe the main electrical connections.
-
-**sample Response:**  
-`The RASPI is connected to the motor driver (L298N) using four GPIO pins (18,19; 22,23) to control motor direction (IN1, IN2, IN3, IN4). Two PWM-capable pins (ENA and ENB; 25 and 26) are connected to control the speed of each motor.
-
-The motors are connected to the output terminals of the motor driver. The motor driver is powered directly by the battery pack (higher voltage), while the ESP32 receives regulated 5V from the buck converter.
-
-All components share a common ground to ensure stable operation. The projector and camera are connected to the laptop, which handles tracking and game logic separately.`
-
-## 7.3 Circuit Diagram/architecture diagram
-
+## 7.3 Circuit architecture diagram
 Insert a hand-drawn or software-made circuit diagram.
-
 **Insert image below:**  
-`[Upload image and link here]`
-<img width="867" height="1156" alt="" src="" />
-
+<img src="images/architecture.jpeg" width="600" />
 
 # 7.4. Power Plan
 
-| Question         | Response                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Power source     | `Battery (Li-ion pack)`                                                                                                                           |
-| Voltage required | `~6–8.4V for motors (via driver), stepped down to 5V for ESP32 (buck converter)`                                                                  |
-| Current concerns | `Motors can draw high current under load, which may cause voltage drops affecting ESP32 and WiFi stability`                                       |
-| Safety concerns  | `Avoid over-discharging Li-ion batteries, ensure proper voltage regulation, prevent short circuits, and secure wiring to avoid loose connections` |
-
----
+| Question         | Response                                                                                                                |
+|------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Power source     | `Laptop/PC power supply and Raspberry Pi power adapter (5V USB supply)`                                                 |
+| Voltage required | `5V for Raspberry Pi; standard power for PC/laptop and mobile phone`                                                    |
+| Current concerns | `Stable power supply required for Raspberry Pi to ensure reliable communication; low overall current consumption`       |
+| Safety concerns  | `Use certified power adapters, avoid overloading USB ports, and ensure proper ventilation for devices during operation` |
 
 # 8. Software Planning/
 
 ## 8.1 Software Tools
 
-| Tool / Platform                | Purpose                                        |
-| ------------------------------ | ---------------------------------------------- |
-| `[MicroPython]`                | `Control ESP32`                                |
-| `[Python/PyGame/OpenCV]`       | `Track markers, game logic, create projection` |
-| `[Fusion/Blender/Illustrator]` | `[Prototyping structure]`                      |
-|                                |                                                |
+| Tool / Platform        | Purpose                                                   |
+|------------------------|---------------------------------------------------------- |
+| Python                 | Core programming language for game development            |
+| Pygame                 | Game development, rendering graphics, handling input      |
+| Raspberry Pi OS        | Runs scripts to receive and forward controller inputs     |
+| Socket / HTTP (Wi-Fi)  | Communication between phone, Raspberry Pi, and PC         |
+| Mobile Browser/App     | Acts as controller interface (send up/down inputs)        |                             |                                               
 
 ## 8.2 Software Logic/Algorithm
-
-Describe what the code must do.
-
-Include:
-
-- startup behavior,
-- input handling,
-- sensor reading,
-- decision logic,
-- output behavior,
-- communication logic,
-- reset behavior.
-
-**Response:**  
-`
-
-- **Sample Startup behavior:**  
-  The Raspi/FPGA initializes motor pins, PWM control, and starts a WiFi access point with a web server. The laptop initializes camera input, tracking system, and projection mapping.
-- **Input handling:**  
-  Movement commands are received from the laptop (pygame sends http requests)
-- **Sensor reading:**  
-  The camera continuously captures frames, and OpenCV detects ArUco markers to determine the car’s position and orientation.
-- **Decision logic:**  
-  The system maps the car’s position into a virtual coordinate system and checks for nearby obstacles or collisions. If movement is valid, the command is allowed; if not, it is blocked or replaced with a feedback action (like a slight shake).
-- **Output behavior:**  
-  The ESP32 drives the motors using PWM signals to control speed and direction. The projector displays the updated game environment, including obstacles, targets, and feedback visuals.
-- **Communication logic:**  
-  The laptop sends HTTP requests (e.g., `/forward`, `/left`) to the ESP32 over WiFi. The ESP32 parses these commands and executes motor actions.
-- **Reset behavior:**  
-  If no command is received within a short timeout, the ESP32 stops the motors. The game resets when a level is completed or restarted.`
+Startup behavior:
+The system initializes the Pygame window, game objects (paddles, ball), and sets the initial game state to the home screen. The Raspberry Pi establishes a network connection and begins listening for input signals from the mobile phone controller.
+Input handling:
+Player inputs are received through the keyboard (W/S keys and arrow keys) and from the mobile phone via the Raspberry Pi. These inputs control the vertical movement of paddles in real time.
+Sensor reading:
+Not applicable, as the system does not use physical sensors. Instead, it relies on user input signals from keyboard and mobile controller.
+Decision logic:
+The game continuously updates ball position, detects collisions with paddles and boundaries, and determines scoring conditions. Ball speed increases at fixed time intervals (every 7 seconds) to raise the difficulty level. The system also checks if a player has reached the winning score (5 points).
+Output behavior:
+The game renders real-time visuals on the screen, including paddle movement, ball motion, countdown timer, scoreboard with player names, and winner announcement.
+Communication logic:
+The mobile phone sends control inputs over Wi-Fi to the Raspberry Pi. The Raspberry Pi processes and forwards these inputs to the PC game, enabling wireless control of the paddle.
+Reset behavior:
+After each point, the game enters a short pause state and resets the ball position. A countdown is displayed before the next round begins. The entire game resets when a player reaches 5 points or when the user restarts the game.
 
 ## 8.3 Code Flowchart
 
@@ -307,8 +272,7 @@ Suggested sequence:
 - error handling.
 
 **Insert image below:**  
-<img width="1600" height="1200" alt="image" src="" />
-<img width="1600" height="1200" alt="image" src="" />
+<img src="images/architecture.jpeg" width="600" />
 
 
 
