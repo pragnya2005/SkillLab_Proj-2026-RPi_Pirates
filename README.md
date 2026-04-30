@@ -1,30 +1,10 @@
 # SKILL LAB PRATICAL HACKATHON
-
 ## Final Project README
-
 > **Project Weight:** 100%  
-> **Team Size:** 4/3 students  
+> **Team Size:** 4 students  
 > **Project Duration:** 16 hours  
 > **Total Time Available:** 32 effort-hours per team  
 > **Project Type:** Playful, interactive, technology-based experience
-
----
-
-# Before you begin
-
-## Fork and rename this repository
-
-After forking this repository, rename it using the format:
-
-`SKILLLAB_PROR-2026-TeamName`
-
-### Example
-
-`SKILLLAB_PROR-2026-AuroWizards`
-
-Do not keep the default repository name.
-
----
 
 # How to use this README
 
@@ -41,42 +21,40 @@ By the final review, this README should clearly show:
 - your testing,
 - your failures and changes,
 - your final outcome.
-
 ## Rules
-
 - Fill every section.
 - Do not delete headings.
 - If something does not apply, write `Not applicable` and explain why.
 - Add images, screenshots, sketches, links, and videos wherever useful.
 - Update task status and weekly logs regularly.
 - Use this file as evidence of process, not only as a final report.
-
 ---
-
 # 1. Team Identity
 
 ## 1.1 Studio / Group Name
 
-`Project^2`
+`RPi_Pirates`
 
 ## 1.2 Team Members
 
-| Name                  | Primary Role                    | Secondary Role   | Strengths Brought to the Project |
-| --------------        | ------------------------------- | --------------   | -------------------------------- |
-| `Mrugendra Vasmatkar` | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation, Gift of Gab `|
-| `Jyoti Bagate`        | `[Electronics / Fabrication]`   | `[Coding]`       | `Material Handling, Hardware`    |
+| Name                  | Primary Role                  | Secondary Role   | Strengths Brought to the Project |
+| --------------------- | ------------------------------| --------------   | -------------------------------- |
+| `Pragnya Sahoo`       | `UI interface / Coding / App `| `Documentation`  | `Documentation, Gift of Gab `    |
+| `Sudarsana Krishnan`  | `UI interface / Coding / App `| `Documentation`  | `Material Handling, Hardware`    |
+| `Aditi Panigrahi`     | `UI interface / Coding / App `| `Documentation`  | `Documentation, Gift of Gab `    |
+| `Shabarinath Nair`    | `UI interface / Coding / App `| `Documentation`  | `Material Handling, Hardware`    |
 
 ## 1.3 Project Title
 
-`"Project Project"`
+`"Implementing Ping Pong game using RasPi"`
 
-`(because Project-or)`
+##`(because Project-or)`
 
-<img width="1600" height="1131" alt="image" src="https://github.com/user-attachments/assets/c64bfbd4-b3b7-43d9-83ad-c203a5aa11bc" />
+##<img width="1600" height="1131" alt="image" src="https://github.com/user-attachments/assets/c64bfbd4-b3b7-43d9-83ad-c203a5aa11bc" />
 
 ## 1.4 One-Line Pitch
 
-`A projected, fully customizable time portal where engineering education is done through PUBG battlefield in the comfort of our home`
+`An interactive, multi-controller ping pong game powered by Raspberry Pi, combining keyboard and mobile inputs with dynamic gameplay and real-time scoring.`
 
 ## 1.5 Expanded Project Idea
 
