@@ -74,7 +74,7 @@ Additionally, the game introduces dynamic gameplay elements such as increasing b
 ## 3.1 User Journey 
 A user opens the Ping Pong Game on their device and is greeted with a visually engaging home screen featuring a playful ping pong theme. The title of the game is displayed along with a prominent “Play” button. Curious and excited, the user clicks on the Play button to begin.
 Next, the user is taken to a game mode selection screen, where they can choose between One Player and Two Players. If the user wants to play alone, they select One Player, where they will compete against the computer. If they want to play with a friend, they select Two Players.
-In the case of Two Player mode, the system asks both players to enter their names. After entering the names, they proceed further. The controls are clearly shown: Player 1 uses W and S keys, while Player 2 uses the Up and Down arrow keys. After selecting the mode, the user moves to the level selection screen, where they choose the difficulty of the game — Easy, Medium, or Hard — depending on their comfort level. The difficulty affects the speed of the ball and the gameplay intensity.
+In the case of Two Player mode, the system asks both players to enter their names. After entering the names, they proceed further. The controls are clearly shown: Player 1 uses W and S keys, while Player 2 uses the Up and Down arrow keys. The difficulty affects the speed of the ball and the gameplay intensity.
 Once the level is selected, the game starts. A rectangular game area appears with two paddles and a moving ball. A scoreboard is displayed at the top, showing the current scores of both players. The user controls their paddle and tries to hit the ball back and forth. Each time a player misses the ball, the opponent gains a point. A sound effect plays whenever the ball hits a paddle, enhancing the gaming experience.
 During the game, the user can press ‘P’ to pause or ‘ESC’ to exit if needed. As the game continues, the scoreboard updates dynamically. When one of the players reaches 5 points, the game ends, and a winner screen is displayed showing the winner’s name and final score. Finally, the user can press ‘R’ to replay, which brings them back to the home screen, ready to start a new game.
                                    
@@ -185,10 +185,11 @@ App Interaction: The game can run as a web application or local application. The
 # 6. System Design, Sketches and Visual Planning 
 
 ## 6.1 Concept sketch
-
+The sketch illustrates the user interface flow and screen layout of the ping pong game. It begins with a simple home screen displaying the game title and a play button, ensuring ease of navigation. The next screen allows the user to select between single-player (mouse or AI-based opponent) and two-player mode (keyboard controls). A level selection screen follows, offering options such as easy, medium, and hard, which affect gameplay speed. The main gameplay screen includes paddles on both sides, a moving ball, and a centrally positioned scoreboard that tracks points up to a maximum of five. Finally, a winner screen is displayed once a player reaches the target score, with an option to replay the game. The design focuses on clarity, simplicity, and intuitive interaction for an engaging user experience.
 <img src="images/sketch.jpeg" width="600" />
 
 ## 6.2 Labeled flow diagram
+The flowchart represents the logical sequence of operations in the ping pong game system. The process begins with the start state, followed by the home screen where the user initiates the game by clicking the play button. The user then selects the game mode (single-player or two-player). If two-player mode is chosen, player names are entered. Next, the user selects the difficulty level (easy, medium, or hard), after which the game begins with a countdown. During gameplay, the system continuously updates ball movement, paddle positions, and scores. A decision condition checks whether any player has reached the winning score (5 points). If not, the game continues; otherwise, the winner is declared. The system then provides an option to replay or return to the home screen, completing the cycle.
 **Insert image below:**  
 <img src="images/flow.jpeg" width="600" />
 
@@ -215,7 +216,7 @@ The keyboard is directly connected to the PC and is used for player input in mul
 Since there are no high-power components or dedicated circuits, a common electrical ground or physical wiring between components is not required. The system relies entirely on network-based communication for interaction between devices
 
 ## 7.3 Circuit architecture diagram
-Insert a hand-drawn or software-made circuit diagram.
+The Ping Pong Game system is designed using a Raspberry Pi as the main processing unit, which controls the entire gameplay. The system takes input from devices such as a keyboard and mouse, where the keyboard is used in two-player mode and the mouse is used in one-player mode to control the paddles. These inputs are processed by the Raspberry Pi, which runs the game logic using software (Python and Pygame). It performs operations such as paddle movement, ball movement, collision detection, score calculation, and winner determination. The processed output is then displayed on a monitor, where the user can visually interact with the game. The system follows a simple input–process–output model, making it efficient and easy to understand.
 **Insert image below:**  
 <img src="images/architecture.jpeg" width="600" />
 
@@ -257,156 +258,127 @@ Reset behavior:
 After each point, the game enters a short pause state and resets the ball position. A countdown is displayed before the next round begins. The entire game resets when a player reaches 5 points or when the user restarts the game.
 
 ## 8.3 Code Flowchart
-
-Insert a flowchart showing your code logic.
-
-Suggested sequence:
-
-- start,
-- initialize,
-- wait for input,
-- read input,
-- decision,
-- trigger output,
-- repeat or reset,
-- error handling.
-
+The flowchart represents the step-by-step working of the Ping Pong Game system. The process begins with the start of the program, after which the home screen is displayed to the user. From the home screen, the user clicks on the play option, which takes them to the mode selection screen where they can choose between one-player or two-player mode.
+If the user selects two-player mode, they are required to enter the player names, while in one-player mode this step is skipped. After that, the user selects the difficulty level such as easy, medium, or hard, which determines the speed and complexity of the game.
+Once the setup is complete, the game starts, and the main gameplay begins. In this stage, the ball moves continuously, and players control their paddles to hit the ball. The score updates automatically whenever a player misses the ball and the opponent gains a point.
+A decision condition is then checked: whether any player has reached 5 points. If no player has reached the winning score, the game continues in a loop. If a player reaches 5 points, the system displays the winner screen, announcing the winner.
+Finally, the user is given an option to replay the game, and upon selection, the system returns to the home screen, completing one full cycle of the game flow.
 **Insert image below:**  
-<img src="images/architecture.jpeg" width="600" />
-
-
-
+<img src="images/codeflow.jpeg" width="600" />
 
 # 9. Bill of Materials
 
 ## 9.1 Full BOM
-
-| Item                             | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec               | Why This Choice?          |
-| -------------------------------- | --------:| ------- | ------------ | --------------:| ----------------------------- | ------------------------- |
-| `[RASPI]`                        | `1`      | `Yes`   | `No`         | `0`            | `38 Pin ESP32`                | `[To control components]` |
-| `[Motor Driver]`                 | `[1]`    | `[Yes]` | `[No]`       | `0`            | `[LN296]`                     | `[To drive both motors]`  |
-| `[DC Motors and wheel]`          | `[2]`    | `[No]`  | `[Yes]`      | `[150]`        | `[BO Motors and 6 cm wheels]` | `[high torque motors]`    |
-| `[Buck Converter]`               | `[1]`    | `[No]`  | `[Yes]`      | `[75]`         |                               |                           |
-| `[Li-ion batteries with holder]` | `[1]`    | `[No]`  | `[Yes]`      | `[200]`        |                               |                           |
+| Item                     | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec                | Why This Choice?                               |
+|--------------------------|---------:|--------|--------------|---------------:|-------------------------------|--------------------------------------------------|
+| Raspberry Pi             | 1        | Yes    | No           | 0              | 5V Micro USB / USB-C powered  | Acts as bridge between phone controller and PC   |
+| PC / Laptop              | 1        | Yes    | No           | 0              | Standard system with Python   | Runs game logic using Pygame                     |
+| Mobile Phone             | 1        | Yes    | No           | 0              | Android/iOS device            | Used as wireless controller                      |
+| Wi-Fi Network            | 1        | Yes    | No           | 0              | Local network connection      | Enables communication between devices            |
+| Display Screen/Monitor   | 1        | Yes    | No           | 0              | HDMI-compatible display       | Displays gameplay and UI                         |
+| Keyboard                 | 1        | Yes    | No           | 0              | Standard USB keyboard         | Provides player input                            |
 
 ## 9.2 Material Justification
-
-Explain why you selected your main materials and components.
-
-**Response:**  
-`DC motors (BO motors) were chosen instead of servos or steppers because the system requires continuous rotation for movement rather than precise angular control (Previously, we were considering using steppers as we were planning on tracking movement on the ESP using its relative position from an origin, but since we're using a camera now, this is not required). A motor driver (L298N) was used to allow bidirectional control and speed variation using PWM.`
-
+The components were selected to support a software-driven interactive game with minimal hardware dependency. The Raspberry Pi was chosen as it provides a compact and efficient platform for handling communication between the mobile phone and the PC. It allows flexible integration of wireless inputs without requiring complex circuitry.
+A PC or laptop was used to run the main game logic using Python and Pygame, as it offers sufficient processing power and graphical capabilities. The mobile phone was selected as a controller because it is easily available and enables wireless, user-friendly interaction. A Wi-Fi network is used instead of wired connections to simplify setup and improve flexibility.
+Overall, the design avoids unnecessary hardware components such as motors or drivers, making the system cost-effective, simple to implement, and focused on interaction and gameplay rather than mechanical complexity.
 
 ## 9.3 Items You chose
 
-| Item                 | Why Needed               | Purchase Link | Latest Safe Date to Procure | Status       |
-| -------------------- | ------------------------ | ------------- | --------------------------- | ------------ |
-| `BO Motors + Wheels` | `Drive system for car`   | `robu.in`     | `15th April`                | `[Received]` |
-| `Buck Converter`     | `Stable power for ESP32` | `local store` | `before testing`            | `[Received]` |
-| `Li-ion Batteries`   | `Portable power`         | `local store` | `before testing`            | `Recieved`   |
+| Item               | Why Needed                                       | Purchase Link | Latest Safe Date to Procure | Status      |
+|--------------------|--------------------------------------------------|---------------|-----------------------------|-------------|
+| Raspberry Pi       | To receive and forward mobile controller input   | Available     | Already available           | Received    |
+| Mobile Phone       | Acts as wireless controller                      | Personal      | Already available           | In Use      |
+| PC / Laptop        | Runs game logic (Pygame)                         | Personal      | Already available           | In Use      |
+| Wi-Fi Network      | Enables communication between devices            | Available     | Already available           | Active      |
+| Keyboard           | Player input for gameplay                        | Available     | Already available           | In Use      |
 
 ## 9.4 Budget Summary
 
-| Budget Item           | Estimated Cost              |
-| --------------------- | ---------------------------:|
-| Electronics           | `[400]`                     |
-| Mechanical parts      | `[200]`                     |
-| Fabrication materials | `[0 (Available on campus)]` |
-| Purchased extras      | `[0]`                       |
-| Contingency           | `[300]`                     |
-| **Total**             | `[900]`                     |
+| Budget Item           | Estimated Cost (₹) |
+|-----------------------|-------------------:|
+| Electronics           | 0                  |
+| Mechanical parts      | 0                  |
+| Fabrication materials | 0                  |
+| Purchased extras      | 0                  |
+| **Total**             | 0                  |
 
 ## 9.5 Budget Reflection
 
-If your cost is too high, what can be simplified, removed, substituted, or shared?
-
-**Response:**  
-
----
+The overall cost of the project is minimal because it primarily relies on existing devices such as a PC, Raspberry Pi, and mobile phone. No additional hardware components like motors, drivers, or fabrication materials were required.
+If further cost reduction were needed, the Raspberry Pi could be eliminated by directly connecting the mobile controller to the PC using network-based communication, making the system entirely software-based. Additionally, shared devices and open-source tools were used to avoid any licensing or hardware expenses.
+This approach demonstrates that interactive systems and games can be developed efficiently without high costs, by leveraging existing resources and focusing on software integration rather than hardware complexity.
 
 # 10. Planning the Work
 
 ## 10.1 Team Working Agreement
-
-Write how your team will work together.
-
-Include:
-
-- how tasks are divided,
-- how decisions are made,
-- how progress will be checked,
-- what happens if a task is delayed,
-- how documentation will be maintained.
-
-**Response:**  
-
+The team divided responsibilities based on key components of the project. Members Sudarsana and Shabarinath focused on developing the core functionality, including game coding using Pygame and implementing the mobile phone controller through the Raspberry Pi. Members Pragnya and Aditi worked on the user interface, overall system integration, and project documentation.
+Decisions were made collaboratively through regular discussions, ensuring that all team members contributed ideas before finalizing any major changes. Progress was tracked through frequent check-ins and testing sessions, where each module was reviewed and integrated step by step.
+If any task was delayed, responsibilities were adjusted within the team to provide support and ensure timely completion. Documentation was maintained continuously alongside development, with updates made after each major milestone to keep the report accurate and up to date.
 
 ## 10.2 Task Breakdown
 
-| Task ID | Task                    | Owner    | Estimated Hours | Deadline     | Dependency | Status |
-| ------- | ----------------------- | -------- | ---------------:| ------------ | ---------- | ------ |
-| T1      | `[Finalize concept]`    | `[Both]` | `2`             | `1st April`  | `None`     | `Done` |
-
+| Task ID | Task                                              | Owner                     | Estimated Hours | Deadline  | Dependency      | Status |
+|---------|---------------------------------------------------|---------------------------|----------------:|-----------|-----------------|--------|
+| T1      | Basic Pong setup (PC + keyboard controls)         | Sudarsana, Shabarinath    | 1.5             | Same Day  | None            | Done   |
+| T2      | Multiplayer via phone controller (Raspi)          | Sudarsana, Shabarinath    | 1.5             | Same Day  | T1              | Done   |
+| T3      | Single player mode (AI opponent)                  | Sudarsana, Shabarinath    | 1               | Same Day  | T1              | Done   |
+| T4      | UI features (countdown, scoreboard, names)        | Pragnya, Aditi            | 1               | Same Day  | T1              | Done   |
+| T5      | Integration of all modules                        | Pragnya, Aditi            | 0.5             | Same Day  | T2, T3, T4      | Done   |
+| T6      | Testing and debugging                             | All                       | 0.5             | Same Day  | T5              | Done   |
+| T7      | Documentation and final report                    | Pragnya                   | 0.5             | Same Day  | T6              | Done   |
+The project was completed in a focused development session of approximately 6 hours. Tasks were executed in parallel wherever possible, enabling rapid implementation and integration.
 
 ## 10.3 Responsibility Split
 
-| Area                 | Main Owner     | Support Owner |
-| -------------------- | ----------     | ------------- |
-| Concept              | `[Mrugendra]`  | `[Jyoti]`     |
-| Electronics          | `[]`           | `[]`          |
-| Coding               | `[]`           | `[]`          |
-| Mechanical build     | `[]`           | `[]`          |
-| Testing              | `[]`           | `[]`          |
-| Documentation        | `[]`           | `[]`          |
-
----
+| Area              | Main Owner                | Support Owner              |
+|-------------------|---------------------------|----------------------------|
+| Concept           | Sudarsana                 | Shabarinath                |
+| Electronics       | Sudarsana                 | Shabarinath                |
+| Coding            | Shabarinath               | Sudarsana                  |
+| UI / Interface    | Pragnya                   | Aditi                      |
+| Integration       | Aditi                     | Pragnya                    |
+| Testing           | All                       | -                          |
+| Documentation     | Pragnya                   | Aditi                      |
 
 # 11 hour Milestones
 
 ## 11.1 8-hour Plan(tentetively you may set)
 
-### Bi Hour 1 — Plan and De-risk
+Bi Hour 1 — Planning and Setup
+Expected outcomes:
+ 1. Idea finalized
+ 2. Game flow (menus, modes, scoring) decided
+ 3. UI sketches and flowchart created
+ 4. Software tools finalized (Python, Pygame)
+ 5. Basic game window and environment setup
+ 6. Feasibility of controls tested
 
+Bi Hour 2 — Core Game Development
 Expected outcomes:
 
-- [x] Idea finalized
-- [x] Core interaction decided
-- [x] Sketches made
-- [x] BOM completed
-- [x] Purchase needs identified
-- [ ] Key uncertainty identified
-- [x] Basic feasibility tested
+ 1. Basic Pong mechanics implemented (ball + paddles)
+ 2. Keyboard controls working
+ 3. Collision detection implemented
+ 4. Scoring system added
+ 5. Initial playable version created
 
-### Bi Hour 2 — Build Subsystems
-
+Bi Hour 3 — Advanced Features & Integration
 Expected outcomes:
+ 1. Mobile controller integrated via Raspberry Pi
+ 2. Single-player mode (AI opponent) implemented
+ 3. Game states added (home, mode select, gameplay)
+ 4. Countdown system implemented
+ 5. First full-feature playable version ready
 
-- [x] Electronics tests completed
-- [ ] CAD / structure planning completed
-- [ ] App UI started if needed
-- [x] Mechanical concept tested
-- [x] Main subsystems partially working
-
-### Bi Hour 3 — Integrate
-
+Bi Hour 4 — UI, Testing, and Finalization
 Expected outcomes:
-
-- [x] Physical body built
-- [x] Electronics integrated
-- [x] Code connected to hardware
-- [ ] App connected if required
-- [x] First playable version exists
-
-### Bi Hour 4 — Refine and Finish
-
-Expected outcomes:
-
-- [x] Technical bugs reduced
-- [x] Playtesting completed
-- [x] Improvements made
-- [x] Documentation completed
-- [x] Final build ready
-
+ 1. UI improvements (buttons, scoreboard, player names)
+ 2. Difficulty levels implemented (speed increase)
+ 3. Testing and debugging completed
+ 4. Documentation completed
+ 5. Final version ready for submission
+ 
 ## 12.2  Update Log
 
 | Days   | Planned Goal   | What Actually Happened | What Changed   | Next Steps     |
