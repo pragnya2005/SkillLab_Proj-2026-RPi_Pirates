@@ -343,7 +343,7 @@ The project was completed in a focused development session of approximately 6 ho
 
 # 11 hour Milestones
 
-## 11.1 8-hour Plan(tentetively you may set)
+## 11.1 8-hour Plan
 
 Bi Hour 1 — Planning and Setup
 Expected outcomes:
@@ -381,96 +381,78 @@ Expected outcomes:
  
 ## 12.2  Update Log
 
-| Days   | Planned Goal   | What Actually Happened | What Changed   | Next Steps     |
-| ------ | -------------- | ---------------------- | -------------- | -------------- |
-| Day 1 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 2 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Day 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-
----
+| Hours        | Planned Goal                                   | What Actually Happened                                      | What Changed                                              | Next Steps                          |
+|--------------|------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------|-------------------------------------|
+| 0–0.25 hr    | Plan idea, flow, and UI                        | Finalized concept, basic flow, and rough sketches           | Kept scope minimal to fit within time                     | Start core development              |
+| 0.25–2 hr    | Build basic Pong game                          | Implemented paddles, ball movement, keyboard controls       | Simplified logic for faster implementation                 | Add scoring and features            |
+| 2–3 hr       | Add scoring and game mechanics                 | Added collision detection, scoring system                   | Adjusted ball speed for better gameplay                   | Integrate controller and AI         |
+| 3–4 hr       | Add phone controller and AI                    | Integrated Raspberry Pi input and basic AI opponent         | Faced minor delays in communication setup, resolved later  | Improve UI and polish               |
+| 3–6 hr       | Documentation (parallel work)                  | Documentation written alongside development                 | Updated continuously instead of end-only writing           | Finalize report                     |
+| 4–6 hr       | UI, testing, and final refinement              | Added countdown, levels, scoreboard, completed testing      | Fixed bugs and improved responsiveness                    | Final submission ready              |
 
 # 13. Risks and Unknowns
 
 ## 13.1 Risk Register
 
-| Risk                                                            | Type         | Likelihood | Impact   | Mitigation Plan                                                                       | Owner                |
-| --------------------------------------------------------------- | ------------ | ---------- | -------- | ------------------------------------------------------------------------------------- | -------------------- |
-| WiFi connection between laptop and ESP32 becomes unstable       | `Technical`  | `Medium`   | `High`   | Keep ESP32 close, ensure stable power supply, reduce network load, add fail-safe stop | `[Gopal]`           |
+| Risk                                                     | Type        | Likelihood | Impact | Mitigation Plan                                                                 | Owner         |
+|----------------------------------------------------------|------------|------------|--------|----------------------------------------------------------------------------------|---------------|
+| Wi-Fi communication delay between phone and Raspberry Pi  | Technical  | Medium     | High   | Use stable network, minimize latency, add fallback keyboard control             | Sudarsana     |
+| Input lag or unresponsive controls                        | Technical  | Medium     | High   | Optimize code, reduce processing load, test responsiveness                       | Shabarinath   |
+| Game bugs (collision, scoring errors)                     | Technical  | Medium     | Medium | Test each module separately and debug during integration                         | Pragnya       |
+| Integration issues between controller and game            | Technical  | Medium     | High   | Incremental integration and continuous testing                                   | Aditi         |
+| Time constraint (short development time)                  | Planning   | High       | Medium | Prioritize core features and reduce non-essential additions                      | All           |
+| UI confusion for users                                    | Design     | Low        | Medium | Keep interface simple and intuitive, test with users                             | Pragnya       |
 
 
 ## 13.2 Biggest Unknown Right Now
-
-What is the single biggest uncertainty in your project at this stage?
-
-**Response:**  
-
-
----
+The biggest uncertainty in our project was the reliability and responsiveness of the communication between the mobile phone controller, Raspberry Pi, and the PC game. Since the system depends on real-time input for smooth gameplay, any delay, lag, or connection instability could directly affect player control and overall experience. Ensuring that inputs from the phone are transmitted quickly and accurately to the game without noticeable latency was a key challenge that required testing and adjustment during development.
 
 # 14. Testing 
 
 ## 14.1 Technical Testing Plan
 
-| What Needs Testing     | How You Will Test It                                                                 | Success Condition                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| `[Wifi connection]`    | `[Check if motor spins via app button]`                                              | `[Both motors accurately respond to wifi signals]`                                                   |
-                       |
+| What Needs Testing                  | How You Will Test It                                              | Success Condition                                              |
+|------------------------------------|-------------------------------------------------------------------|----------------------------------------------------------------|
+| Wi-Fi communication (phone → Pi → PC) | Send repeated inputs from phone and observe paddle movement        | Paddle responds instantly without noticeable lag               |
+| Keyboard controls                  | Press keys (W/S, Arrow keys) during gameplay                      | Paddles move smoothly and accurately                          |
+| Ball movement and collision        | Run game and observe ball bouncing off walls and paddles          | Ball reflects correctly without glitches                      |
+| Scoring system                     | Allow ball to cross boundaries                                    | Score increments correctly for respective player              |
+| Countdown system                   | Start game multiple times                                         | Countdown displays correctly before gameplay                  |
+| Difficulty levels                  | Run game for extended time                                        | Ball speed increases every 7 seconds                          |
+| Game win condition                 | Play until one player reaches 5 points                            | Winner is declared correctly                                  |
+| UI and display                     | Observe all screens (menu, gameplay, result)                      | Text and buttons display clearly and correctly                |
+
 ## 14.2 Testing and Debugging Log
 
-| Date          | Problem Found                         | Type         | What You Tried                                | Result               | Next Action                                    |
-| ------------- | ------------------------------------- | ------------ | --------------------------------------------- | -------------------- | ---------------------------------------------- |
-| `18th April`  | `Car not balancing properly`          | `Mechanical` | `Add low-friction caster support to one side` | `Worked`             | `improve caster structure`                     |
-
+| Date         | Problem Found                              | Type        | What You Tried                                      | Result     | Next Action                          |
+|--------------|--------------------------------------------|------------|----------------------------------------------------|------------|--------------------------------------|
+| Same Day     | Paddle not responding to phone input        | Technical  | Checked Wi-Fi connection and input mapping          | Worked     | Optimize response time               |
+| Same Day     | Ball collision behaving incorrectly         | Technical  | Adjusted collision logic and speed values           | Worked     | Fine-tune gameplay physics           |
+| Same Day     | Delay in input response                     | Technical  | Reduced processing load and optimized code          | Improved   | Further reduce latency if possible   |
+| Same Day     | UI elements overlapping                     | Design     | Adjusted positioning and font sizes                 | Fixed      | Improve visual layout                |
+| Same Day     | Score not updating correctly                | Technical  | Debugged scoring conditions                         | Fixed      | Add edge-case checks                 |
 
 ## 14.3 Playtesting Notes
 
-| Tester      | What They Did                        | What Confused Them                    | What They Enjoyed                         | What You Will Change                          |
-| ----------- | ------------------------------------ | ------------------------------------- | ----------------------------------------- | --------------------------------------------- |
-| `Gopal` | `Tried navigating through obstacles` | `Some obstacles ewren't clear enough` | `Liked projection + real car interaction` | `Add a slight red highlight around obstacles` |
-
-
----
+| Tester        | What They Did                                  | What Confused Them                          | What They Enjoyed                              | What You Will Change                              |
+|---------------|-----------------------------------------------|---------------------------------------------|------------------------------------------------|---------------------------------------------------|
+| Sudarsana     | Played both 1-player and 2-player modes        | Slight delay in phone controller response    | Competitive gameplay and increasing speed       | Improve controller responsiveness                 |
+| Shabarinath   | Tested UI navigation and gameplay flow         | Initially unclear mode selection flow        | Countdown and smooth gameplay experience        | Make buttons more prominent                       |
+| Pragnya       | Played until win condition (5 points)          | Difficulty increase felt sudden              | Fast-paced gameplay and scoring system          | Smoothen speed increment                          |
+| Aditi         | Used keyboard and observed scoreboard         | Score visibility at top was small            | Simple controls and easy-to-understand rules    | Increase scoreboard size                          |
 
 # 15. Build Documentation
 
 ## 15.1 Fabrication Process(if any)
 
-Describe how the project was physically made.
-
-Include:
-
-- cutting,
-- 3D printing,
-- assembly,
-- fastening,
-- wiring,
-- finishing,
-- revisions.
-
-**Response:**  
-`The fabrication process involved designing, manufacturing, assembling, and refining both the physical structure and electronic integration of the system.`
-
-`Design (CAD Modeling):
-The initial model was created using CAD software, where components were designed based on the actual dimensions of the electronic parts. This ensured accurate fitting and minimized errors during assembly.
-Cutting (Laser Cutting):
-The designed parts were fabricated using laser cutting techniques. Sheets were cut precisely according to the CAD model to create the structural base and mounts for components.`
-
-`Components were fixed using adhesives and mechanical supports. Certain parts were intentionally kept modular (not permanently fixed) to allow easy replacement and modification of electronics.
-Surface Finishing:
-Some parts were sanded to smooth rough edges after cutting. Sawdust mixed with adhesive was used to fill gaps and uneven edges, improving structural finish. The final structure was then painted for better aesthetics and durability.`
-
-`Environment Setup (Dark Room Fabrication):
-To enhance projection visibility, a controlled dark environment was created using Z-boards, paper sheets, and bedsheets. This minimized external light interference and improved projection clarity.
-Revisions and Iterations:
-Multiple adjustments were made throughout the process, including refining alignment, improving structural stability, repositioning components, and optimizing the interaction between the physical car and projected environment.`
+Not Applicable (NA) – The project does not involve a dedicated physical fabrication process. It is primarily a software-based system developed using Python and Pygame, where the main interaction occurs through a digital interface displayed on a screen.
+There was no requirement for processes such as cutting, 3D printing, or structural assembly. The setup only involved connecting existing devices such as a PC, Raspberry Pi, keyboard, and mobile phone. These components were used in their standard form without any modification or custom fabrication.
+Minor setup included arranging the system for usability, such as ensuring proper device placement and stable network connectivity between the mobile phone, Raspberry Pi, and PC. Any iterations in the project were focused on improving the software—refining gameplay logic, user interface, responsiveness, and interaction—rather than modifying physical components.
 
 ## 16 Build Photos
 
 Add photos throughout the project.
-
 Suggested images:
-
 - early sketch,
 - prototype,
 - electronics testing,
@@ -487,78 +469,50 @@ Suggested images:
 
 ## 17.1 Final Description
 
-Describe the final version of your project.
-
-**Response:**  
-
+The final project is an interactive digital ping pong game developed using Python and Pygame, integrated with a Raspberry Pi-based mobile controller system. The game allows players to choose between single-player mode (against an AI opponent) and two-player mode (using keyboard and mobile input). It features a structured user interface including a home screen, mode selection, level selection, and gameplay screen. Additional features such as a countdown before the game starts, a real-time scoreboard displaying player names, and a win condition where the first player to reach five points is declared the winner were successfully implemented. The difficulty level increases dynamically as the ball speed rises over time, making the gameplay more challenging and engaging.
 
 ## 17.2 What Works Well
-
-
+1. Smooth and responsive gameplay with real-time paddle and ball movement
+2. Successful integration of mobile phone controller via Raspberry Pi
+3. Clear and intuitive user interface with multiple game states
+4. Functional scoreboard and win condition logic
+5. Dynamic difficulty increase enhances player engagement
 
 ## 17.3 What Still Needs Improvement
-
+1. Minor latency in mobile controller input can be further reduced
+2. AI opponent can be made more intelligent and adaptive
+3. UI can be enhanced with better visuals, animations, and sound effects
+4. Difficulty progression can be made more gradual for better balance
 
 ## 17.4 What Changed From the Original Plan
-
-How did the project change from the initial idea?
-
-**Response:**  
-
-
----
+Initially, the project scope included exploring more complex features and extended interactions. However, due to time constraints, the focus was shifted towards building a stable and functional core system. Some advanced features were simplified or removed to ensure smooth gameplay and reliable integration between the Raspberry Pi, mobile controller, and PC. The final implementation prioritizes usability, responsiveness, and essential game mechanics, resulting in a well-structured and fully working system within the given timeframe.
 
 # 18. Reflection
 
 ## 18.1 Team Reflection
-
-What did your team do well?  
-What slowed you down?  
-How well did you manage time, tasks, and responsibilities?
-
-**Response:**  
-
+The team worked efficiently by dividing tasks based on strengths, which helped in completing the project within a short time. Coding and controller integration were handled in parallel with UI design and documentation, allowing faster progress. One of the key strengths was continuous communication and quick decision-making, which helped resolve issues without delays.
+The main factor that slowed us down was the initial setup of communication between the mobile controller, Raspberry Pi, and PC, as it required debugging and testing to ensure smooth input transfer. However, once resolved, development progressed rapidly.
+Time and task management were handled effectively despite the limited duration. The team adopted a parallel working approach, where multiple components were developed simultaneously, and responsibilities were clearly defined. This ensured that all major features were implemented within the 6-hour development window.
 
 ## 18.2 Technical Reflection
 
-What did you learn about:
-
-- electronics,
-- coding,
-- mechanisms,
-- fabrication,
-- integration?
-
-**Response:**  
-
+Through this project, we gained practical experience in multiple areas. In terms of electronics, we learned how to use the Raspberry Pi as an interface for handling wireless communication between devices. In coding, we improved our understanding of game development using Python and Pygame, including handling real-time input, collision detection, and state management.
+Although the project did not involve mechanical systems or fabrication, we understood how to design systems that rely purely on software interaction. We also learned the importance of integration—ensuring that different components such as the mobile controller, Raspberry Pi, and game engine work together seamlessly. Overall, the project strengthened our ability to build interactive systems by combining programming, networking, and user interface design.
 
 ## 18.3 Design Reflection
 
-What did you learn about:
-
-- designing ,
-- delight,
-- clarity,
-- physical interaction,
-- understanding,
-- iteration?
-
-**Response:**  
+Through this project, we learned that good design is not just about visuals but about creating a smooth and intuitive user experience. While designing the game, we focused on clarity by keeping the interface simple, ensuring that users could easily understand how to navigate between screens and play the game without confusion. We also realized the importance of delight—features like the countdown, increasing speed, and competitive scoring made the game more engaging and enjoyable.
+Even though the project did not involve complex physical interaction, integrating a mobile phone as a controller introduced a new layer of interaction, making the experience more dynamic. We understood that user behavior plays a key role in design decisions, and small issues like unclear buttons or delayed responses can affect the overall experience.
+Iteration was a crucial part of our process. Based on testing and feedback, we continuously refined gameplay speed, UI layout, and responsiveness. This helped us improve both functionality and usability, showing that good design evolves through testing and improvement rather than being perfect from the start. 
 
 
 ## 18.4 If You Had One More hour
 
-What would you improve next?
+If we had one more hour, we would focus on enhancing the overall user experience and polish of the game. This would include improving the responsiveness of the mobile controller to reduce any remaining input delay and making the AI opponent more intelligent and adaptive.
 
-**Response:**  
-
-` `
-
----
+We would also enhance the visual design by adding animations, sound effects, and better graphics to make the game more engaging. Additionally, we would refine the difficulty progression to ensure a smoother increase in challenge. These improvements would not change the core functionality but would significantly improve the quality and feel of the final product.
 
 # 19. Final Submission Checklist
-
-Before submission, confirm that:
 
 - [x] Team details are complete
 - [x] Project description is complete
@@ -568,7 +522,7 @@ Before submission, confirm that:
 - [x] Purchase list is complete
 - [x] Budget summary is complete
 - [x] Mechanical planning is documented if applicable
-- [ ] App planning is documented if applicable
+- [x] App planning is documented if applicable
 - [x] Code flowchart is added
 - [x] Task breakdown is complete
 - [x] Weekly logs are updated
@@ -579,9 +533,5 @@ Before submission, confirm that:
 - [x] Final reflection is written
 <img width="1131" height="1600" alt="image" src="" />
 
----
-
-
----
 
 
