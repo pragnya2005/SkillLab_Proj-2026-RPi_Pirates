@@ -14,13 +14,12 @@
 
 ## 1.2 Team Members
 
-| Name                  | Primary Role                  | Secondary Role   | Strengths Brought to the Project |
-| --------------------- | ------------------------------| --------------   | -------------------------------- |
-| `Pragnya Sahoo`       | `UI interface / App `         | `Documentation`  | `Documentation, Gift of Gab `    |
-| `Sudarsana Krishnan`  | `Coding / App `               | `Documentation`  | `Material Handling, Hardware`    |
-| `Aditi Panigrahi`     | `UI interface / App `         | `Documentation`  | `Documentation, Gift of Gab `    |
-| `Shabarinath Nair`    | ` Coding / App `              | `Documentation`  | `Material Handling, Hardware`    |
-
+| Name                 | Primary Role                              | Secondary Role   | Strengths Brought to the Project            |
+|----------------------|-------------------------------------------|------------------|---------------------------------------------|
+| Pragnya Sahoo        | Team Lead, UI Design & Interface          | Documentation    | Leadership, communication, documentation    |
+| Sudarsana Krishnan   | Game Development & Controller Integration |        -         | Problem-solving, system integration         |
+| Aditi Panigrahi      | UI Design & User Experience               | Documentation    | Creativity, user-centric thinking           |
+| Shabarinath Nair     | Game Development & Controller Integration |        -         | Logical thinking, debugging skills          |
 ## 1.3 Project Title
 
 `"Implementing Ping Pong game using RasPi"`
