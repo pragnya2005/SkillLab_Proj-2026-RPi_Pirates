@@ -311,7 +311,6 @@ If any task was delayed, responsibilities were adjusted within the team to provi
 | T5      | Integration of all modules                        | Pragnya, Aditi            | 0.5             | Same Day  | T2, T3, T4      | Done   |
 | T6      | Testing and debugging                             | All                       | 0.5             | Same Day  | T5              | Done   |
 | T7      | Documentation and final report                    | Pragnya                   | 0.5             | Same Day  | T6              | Done   |
-The project was completed in a focused development session of approximately 6 hours. Tasks were executed in parallel wherever possible, enabling rapid implementation and integration.
 
 ## 10.3 Responsibility Split
 
