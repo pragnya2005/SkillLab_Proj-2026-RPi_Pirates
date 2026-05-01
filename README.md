@@ -297,7 +297,7 @@ If any task was delayed, responsibilities were adjusted within the team to provi
 
 | Task ID | Task                                              | Owner                     | Estimated Hours | Deadline  | Dependency      | Status |
 |---------|---------------------------------------------------|---------------------------|----------------:|-----------|-----------------|--------|
-| T1      | Basic Pong setup (PC + keyboard controls)         | Sudarsana, Shabarinath    | 1.5             | Same Day  | None            | Done   |
+| T1      | Basic Pong setup (PC + keyboard controls)         | All                       | 1.5             | Same Day  | None            | Done   |
 | T2      | Multiplayer via phone controller (Raspi)          | Sudarsana, Shabarinath    | 1.5             | Same Day  | T1              | Done   |
 | T3      | Single player mode (AI opponent)                  | Sudarsana, Shabarinath    | 1               | Same Day  | T1              | Done   |
 | T4      | UI features (countdown, scoreboard, names)        | Pragnya, Aditi            | 1               | Same Day  | T1              | Done   |
