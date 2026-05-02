@@ -424,7 +424,7 @@ There was no requirement for processes such as cutting, 3D printing, or structur
 Minor setup included arranging the system for usability, such as ensuring proper device placement and stable network connectivity between the mobile phone, Raspberry Pi, and PC. Any iterations in the project were focused on improving the software—refining gameplay logic, user interface, responsiveness, and interaction—rather than modifying physical components.
 
 ## 16 Build Photos
-<img src="images/1.jpeg" width="600" />
+<img src="images/welcome.jpeg" width="600" />
 <img src="images/2.jpeg" width="600" />
 <img src="images/sname.jpeg" width="600" />
 <img src="images/3.jpeg" width="600" />
