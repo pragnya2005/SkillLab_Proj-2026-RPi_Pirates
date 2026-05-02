@@ -16,11 +16,11 @@
 
 | Name                 | Primary Role                              | Secondary Role   | Strengths Brought to the Project             |
 |----------------------|-------------------------------------------|------------------|--------------------------------------------- |
-| Pragnya Sahoo        | Team Lead, UI Design & Interface          | Documentation    | Leadership, communication, system integration|
-| Sudarsana Krishnan   | Game Development & Controller Integration |        -         | Problem-solving, system integration          | 
-| Aditi Panigrahi      | UI Design & User Experience               | Documentation    | Creativity, user-centric thinking            |
-| Shabarinath Nair     | Game Development & Controller Integration |        -         | Logical thinking, debugging skills           |
-
+| Pragnya Sahoo        | Team Lead, UI Design & Interface          | Documentation    | Leadership, documentation, basic idea        |
+| Sudarsana Krishnan   | Game Development & Controller Integration |        -         | Mobile controller, system integration        | 
+| Aditi Panigrahi      | UI Design & User Experience               | Documentation    | Creativity, User-interface                   |
+| Shabarinath Nair     | Game Development & Controller Integration |        -         | Powerups, debugging skills                   |
+ 
 ## 1.3 Project Title
 
 `"Implementation of Ping Pong game using RasPi"`
