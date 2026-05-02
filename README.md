@@ -25,7 +25,7 @@
 
 `"Implementation of Ping Pong game using RasPi"`
 
-<img src="images/intro.jpeg" width="600" />
+<img src="images/welcome.jpeg" width="600" />
 
 ## 1.4 One-Line Pitch
 
@@ -166,11 +166,11 @@ App Interaction: The game can run as a web application or local application. The
 
 ## 6.1 Concept sketch
 The sketch illustrates the user interface flow and screen layout of the ping pong game. It begins with a simple home screen displaying the game title and a play button, ensuring ease of navigation. The next screen allows the user to select between single-player (mouse or AI-based opponent) and two-player mode (keyboard controls). A level selection screen follows, offering options such as easy, medium, and hard, which affect gameplay speed. The main gameplay screen includes paddles on both sides, a moving ball, and a centrally positioned scoreboard that tracks points up to a maximum of five. Finally, a winner screen is displayed once a player reaches the target score, with an option to replay the game. The design focuses on clarity, simplicity, and intuitive interaction for an engaging user experience.
-<img src="images/sketch.jpeg" width="600" />
+
 
 ## 6.2 Labeled flow diagram
 The flowchart represents the logical sequence of operations in the ping pong game system. The process begins with the start state, followed by the home screen where the user initiates the game by clicking the play button. The user then selects the game mode (single-player or two-player). If two-player mode is chosen, player names are entered. Next, the user selects the difficulty level (easy, medium, or hard), after which the game begins with a countdown. During gameplay, the system continuously updates ball movement, paddle positions, and scores. A decision condition checks whether any player has reached the winning score (5 points). If not, the game continues; otherwise, the winner is declared. The system then provides an option to replay or return to the home screen, completing the cycle.
-<img src="images/flowchart.jpeg" width="600" />
+<img src="images/flowchart.png" width="600" />
 
 ## 6.3 Approximate Dimensions
 Not Applicable (NA) – The project is primarily a software-based interactive game and does not involve a fixed or dedicated physical structure with defined dimensions. The system runs on a computer display and uses external devices such as a keyboard and mobile phone for input. While a Raspberry Pi is used for input integration, it is not enclosed within a custom-built physical form factor. Therefore, standard dimensions like length, width, height, and weight are not relevant to this project.
@@ -196,7 +196,7 @@ Since there are no high-power components or dedicated circuits, a common electri
 
 ## 7.3 Circuit architecture diagram
 The Ping Pong Game system is designed using a Raspberry Pi as the main processing unit, which controls the entire gameplay. The system takes input from devices such as a keyboard and mouse, where the keyboard is used in two-player mode and the mouse is used in one-player mode to control the paddles. These inputs are processed by the Raspberry Pi, which runs the game logic using software (Python and Pygame). It performs operations such as paddle movement, ball movement, collision detection, score calculation, and winner determination. The processed output is then displayed on a monitor, where the user can visually interact with the game. The system follows a simple input–process–output model, making it efficient and easy to understand. 
-<img src="images/architecture.jpeg" width="600" />
+<img src="images/arch.png" width="600" />
 
 # 7.4. Power Plan
 
@@ -241,7 +241,7 @@ If the user selects two-player mode, they are required to enter the player names
 Once the setup is complete, the game starts, and the main gameplay begins. In this stage, the ball moves continuously, and players control their paddles to hit the ball. The score updates automatically whenever a player misses the ball and the opponent gains a point.
 A decision condition is then checked: whether any player has reached 5 points. If no player has reached the winning score, the game continues in a loop. If a player reaches 5 points, the system displays the winner screen, announcing the winner.
 Finally, the user is given an option to replay the game, and upon selection, the system returns to the home screen, completing one full cycle of the game flow. 
-<img src="images/codeflow.jpeg" width="600" />
+<img src="images/codeflow.png" width="600" />
 
 # 9. Bill of Materials
 
@@ -424,11 +424,19 @@ There was no requirement for processes such as cutting, 3D printing, or structur
 Minor setup included arranging the system for usability, such as ensuring proper device placement and stable network connectivity between the mobile phone, Raspberry Pi, and PC. Any iterations in the project were focused on improving the software—refining gameplay logic, user interface, responsiveness, and interaction—rather than modifying physical components.
 
 ## 16 Build Photos
-<img src="images/intro.jpeg" width="600" />
-<img src="images/mode(2).jpeg" width="600" />
-<img src="images/waytoplay.jpeg" width="600" />
-<img src="images/level.jpeg" width="600" />
-<img src="images/powerups.jpeg" width="600" />
+<img src="images/1.jpeg" width="600" />
+<img src="images/2.jpeg" width="600" />
+<img src="images/sname.jpeg" width="600" />
+<img src="images/3.jpeg" width="600" />
+<img src="images/4.jpeg" width="600" />
+<img src="images/5.jpeg" width="600" />
+<img src="images/6.jpeg" width="600" />
+<img src="images/7.jpeg" width="600" />
+<img src="images/mn1.jpeg" width="600" />
+<img src="images/mn2.jpeg" width="600" />
+<img src="images/8.jpeg" width="600" />
+<img src="images/9.jpeg" width="600" />
+<img src="images/10.jpeg" width="600" />
 
 # 17. Final Outcome
 
