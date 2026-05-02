@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+<style>
+body { background:black; color:white; text-align:center; }
+
+#joystick {
+    width:200px; height:200px;
+    background:#222; border-radius:50%;
+    margin:50px auto; position:relative;
+}
+
+#stick {
+    width:80px; height:80px;
+    background:white; border-radius:50%;
+    position:absolute; top:60px; left:60px;
+}
+</style>
+</head>
+
+<body>
+
+<h3 id="playerLabel">Connecting...</h3>
+
+<div id="joystick">
+    <div id="stick"></div>
+</div>
+
+<script>
+let socket = io();
+let player = "";
+
+socket.on("assign", (data)=>{
+    player = data.player;
+    document.getElementById("playerLabel").innerText = "You are " + player.toUpperCase();
+});
+
+let dx=0, dy=0;
+
+setInterval(()=>{
+    if(player !== ""){
+        socket.emit("move", {dir:{x:dx, y:dy}});
+    }
+}, 30);
+
+let joy = document.getElementById("joystick");
+let stick = document.getElementById("stick");
+
+joy.addEventListener("touchmove", e=>{
+    let r = joy.getBoundingClientRect();
+    let t = e.touches[0];
+
+    let x = t.clientX - r.left - 100;
+    let y = t.clientY - r.top - 100;
+
+    dx = Math.max(-1, Math.min(1, x/80));
+    dy = Math.max(-1, Math.min(1, y/80));
+
+    stick.style.left = (60 + dx*40)+"px";
+    stick.style.top = (60 + dy*40)+"px";
+});
+
+joy.addEventListener("touchend", ()=>{
+    dx=0; dy=0;
+    stick.style.left="60px";
+    stick.style.top="60px";
+});
+</script>
+
+</body>
+</html>
